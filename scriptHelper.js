@@ -29,17 +29,26 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    window.addEventListener("load", function(){
-        let launchForm = document.querySelector("form");
-        launchForm.addEventListener("submit", function(event){
-            let pilotInput = document.querySelector("input[name=pilotName]");
-            let copilotInput = document.querySelector("input[name=copilotName]");
-            let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-            let cargoLevelInput = document.querySelector("input[name=cargoMass]");
-            
-        });
-       });
+    validateInput();
+    let launchForm = document.querySelector("form");
+    
+    if(pilot === "Empty" || copilot === "Empty"){
+        alert("All Fields Are Required!!");
+    }
+    else if(fuelLevel === "Empty" || cargoLevel === "Empty"){
+        alert("All Fields Are Required!!");
+    }
+    else if(pilot === "Is a Number" || copilot === "Is a Number"){
+        alert("Enter Valid Information");
+    }
+    else if(fuelLevel === "Not a Number" || cargoLevel === "Not a Number"){
+        alert("Enter Valid Information");
+    }
+
 }
+  
+            
+
 
 async function myFetch() {
     let planetsReturned;
