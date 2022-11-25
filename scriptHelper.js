@@ -26,23 +26,23 @@ function validateInput(testInput) {
     else if(!isNaN(testInput)){
         return "Is a Number";
     }
+   
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput();
-    let launchForm = document.querySelector("form");
+    let form = document.querySelector("form");
     
-    if(pilot === "Empty" || copilot === "Empty"){
+    if(pilot === "Empty" || copilot === "Empty" || fuelLevel === "Empty" || cargoLevel === "Empty"){
         alert("All Fields Are Required!!");
     }
-    else if(fuelLevel === "Empty" || cargoLevel === "Empty"){
-        alert("All Fields Are Required!!");
-    }
-    else if(pilot === "Is a Number" || copilot === "Is a Number"){
+   
+    else if(pilot === "Is a Number" || copilot === "Is a Number" || fuelLevel === "Not a Number" || cargoLevel === "Not a Number"){
         alert("Enter Valid Information");
     }
-    else if(fuelLevel === "Not a Number" || cargoLevel === "Not a Number"){
-        alert("Enter Valid Information");
+    
+    else{
+        alert("ScriptHelper.js Running");
     }
 
 }
