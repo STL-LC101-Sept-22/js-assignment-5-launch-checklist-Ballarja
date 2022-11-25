@@ -3,7 +3,8 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   /*
+   const div = document.getElementById()
+   div.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
                     <li>Name: </li>
@@ -13,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Number of Moons: </li>
                 </ol>
                 <img src="">
-   */
+            `;
 }
 
 function validateInput(testInput) {
@@ -31,7 +32,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    
+    // Possibly work needed on if else if statements
     let form = document.querySelector("form");
     
     if(pilot === "Empty" || copilot === "Empty" || fuelLevel === "Empty" || cargoLevel === "Empty"){
