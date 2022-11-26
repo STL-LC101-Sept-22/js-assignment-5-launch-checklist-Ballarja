@@ -33,22 +33,8 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // Possibly work needed on if else if statements
-    let form = document.querySelector("form");
-    
-    if(pilot === "Empty" || copilot === "Empty" || fuelLevel === "Empty" || cargoLevel === "Empty"){
-        alert("All Fields Are Required!!");
-        console.log("isPrinted");
-    }
-   
-    else if(pilot === "Is a Number" || copilot === "Is a Number" || fuelLevel === "Not a Number" || cargoLevel === "Not a Number"){
-        alert("Enter Valid Information");
-        console.log("Second One Is Printed");
-    }
-    
-    else{
-        alert("ScriptHelper.js Running");
-    }
-    validateInput();
+    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready`;
+    document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilot} is ready`;
 }
   
             
