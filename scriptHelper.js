@@ -35,6 +35,23 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // Possibly work needed on if else if statements
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready`;
     document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilot} is ready`;
+
+    if(fuelLevel < 10000){
+        document.getElementById("faultyItems").style.visibility = "visible";
+        document.getElementById("fuelStatus").innerHTML = "Not enough fuel for the journey.";
+        document.getElementById("launchStatus").style.color = "red";
+        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+    }
+    if(cargoMass > 10000){
+        document.getElementById(list).style.visibility = "visible";
+        document.getElementById("cargoStatus").innerHTML = "Too much mass for the shuttle to take off.";
+        document.getElementById("launchStatus").style.color = "red";
+        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+    }
+    else{
+        document.getElementById("launchStatus").style.color = "green";
+        document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
+    }
 }
   
             

@@ -3,7 +3,7 @@
 window.addEventListener("load", function() {
     
     let form = document.querySelector("form");
-    
+
       form.addEventListener("submit", function(event) {
        let pilotInput = document.querySelector("input[name=pilotName]");
        let copilotInput = document.querySelector("input[name=copilotName]");
@@ -29,7 +29,5 @@ window.addEventListener("load", function() {
     })
     
 // });
-    window.addEventListener("load", function() {
-    });
-
+ 
  
