@@ -6,11 +6,11 @@ window.addEventListener("load", function() {
     let form = document.querySelector("form");
 
       form.addEventListener("submit", function(event) {
-       const pilotInput = document.querySelector("input[name=pilotName]").textContent;
-       const copilotInput = document.querySelector("input[name=copilotName]").textContent;
-       const fuelInput = document.querySelector("input[name=fuelLevel]").textContent;
-       const cargoInput = document.querySelector("input[name=cargoMass]").textContent;
-       const list = document.querySelector("input[name=faultyItems]");
+       let pilotInput = document.querySelector("input[name=pilotName]").value;
+       let copilotInput = document.querySelector("input[name=copilotName]").value;
+       let fuelInput = document.querySelector("input[name=fuelLevel]").value;
+       let cargoInput = document.querySelector("input[name=cargoMass]").value;
+       let list = document.querySelector("input[name=faultyItems]");
        
        if(validateInput(pilotInput) === "Empty" || validateInput(copilotInput) === "Empty" 
        || validateInput(fuelInput) === "Is a Number" || validateInput(cargoInput) === "Is a Number"){
