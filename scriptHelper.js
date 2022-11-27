@@ -3,17 +3,16 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   const div = document.getElementById()
-   div.innerHTML = `
+   document.getElementById("missionTarget").innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name:${name} </li>
+                    <li>Diameter:${diameter} </li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth:${distance} </li>
+                    <li>Number of Moons:${moons} </li>
                 </ol>
-                <img src="">
+                <img src="${imageUrl}">
             `;
 }
 
@@ -34,20 +33,20 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // Possibly work needed on if else if statements
-    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready`;
-    document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilot} is ready`;
+    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
+    document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilot} is ready for launch`;
     
 
     if(fuelLevel < 10000){
         document.getElementById("faultyItems").style.visibility = "visible";
-        document.getElementById("fuelStatus").innerHTML = "Not enough fuel for the journey.";
+        document.getElementById("fuelStatus").innerHTML = "Not enough fuel for the journey";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
         console.log("fuelLevel log");
     }
     if(cargoLevel > 10000){
         document.getElementById("faultyItems").style.visibility = "visible";
-        document.getElementById("cargoStatus").innerHTML = "Too much mass for the shuttle to take off.";
+        document.getElementById("cargoStatus").innerHTML = "Too much mass for the shuttle to take off";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
         console.log("cargoLevel log");
@@ -73,6 +72,7 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
+   // planets Math.ceil(Math.random)
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
