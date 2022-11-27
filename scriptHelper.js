@@ -28,6 +28,7 @@ function validateInput(testInput) {
     else if(!isNaN(testInput)){
         return "Is a Number";
     }
+    return "";
    
 }
 
@@ -35,22 +36,27 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // Possibly work needed on if else if statements
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready`;
     document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilot} is ready`;
+    
 
     if(fuelLevel < 10000){
-        document.getElementById("faultyItems").style.visibility = "visible";
+        //list.style.visibility = "visible";
         document.getElementById("fuelStatus").innerHTML = "Not enough fuel for the journey.";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+        console.log("fuelLevel log");
     }
-    if(cargoMass > 10000){
-        document.getElementById(list).style.visibility = "visible";
+    if(cargoLevel > 10000){
+        //list.style.visibility = "visible";
         document.getElementById("cargoStatus").innerHTML = "Too much mass for the shuttle to take off.";
         document.getElementById("launchStatus").style.color = "red";
         document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+        console.log("cargoLevel log");
     }
-    else{
+    if(fuelLevel >= 10001 && cargoLevel <= 9999){
+        //list.style.visibility = "visible";
         document.getElementById("launchStatus").style.color = "green";
         document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
+        console.log("Ready for launch");
     }
 }
   
