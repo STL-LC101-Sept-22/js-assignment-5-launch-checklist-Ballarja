@@ -27,7 +27,7 @@ function validateInput(testInput) {
     else if(!isNaN(testInput)){
         return "Is a Number";
     }
-    return "";
+    return " ";
    
 }
 
@@ -65,14 +65,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        response.json().then(function(json){
+            return response.json(planetsReturned);
+        })
         });
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
-   // planets Math.ceil(Math.random)
+   return planets (Math.ceil(Math.random)) + 1;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;

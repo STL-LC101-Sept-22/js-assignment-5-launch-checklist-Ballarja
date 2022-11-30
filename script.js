@@ -13,11 +13,14 @@ window.addEventListener("load", function() {
        let list = document.querySelector("input[name=faultyItems]");
        
        if(validateInput(pilotInput) === "Empty" || validateInput(copilotInput) === "Empty" 
-       || validateInput(fuelInput) === "Is a Number" || validateInput(cargoInput) === "Is a Number"){
+       || validateInput(fuelInput) === "Not a Number" || validateInput(cargoInput) === "Not a Number"){
             alert("All Fields Are Required!!");
-            console.log("script.js log");
-            event.preventDefault();
        }
+       else if(validateInput(pilotInput) === "Is a Number" || validateInput(copilotInput) === "Is a Number" 
+       || validateInput(fuelInput) === "Empty" || validateInput(cargoInput) === "Empty"){
+            alert("All Fields Are Required!!");
+       }
+       event.preventDefault();
         formSubmission(document, list, pilotInput, copilotInput, fuelInput, cargoInput);
       });
     let listedPlanets;
