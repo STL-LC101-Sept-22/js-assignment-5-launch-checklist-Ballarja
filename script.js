@@ -13,11 +13,11 @@ window.addEventListener("load", function() {
        let list = document.querySelector("input[name=faultyItems]");
        
        if(validateInput(pilotInput) === "Empty" || validateInput(copilotInput) === "Empty" 
-       || validateInput(fuelInput) === "Not a Number" || validateInput(cargoInput) === "Not a Number"){
+       || validateInput(fuelInput) === "Empty" || validateInput(cargoInput) === "Empty"){
             alert("All Fields Are Required!!");
        }
        else if(validateInput(pilotInput) === "Is a Number" || validateInput(copilotInput) === "Is a Number" 
-       || validateInput(fuelInput) === "Empty" || validateInput(cargoInput) === "Empty"){
+       || validateInput(fuelInput) === "Not a Number" || validateInput(cargoInput) === "Not a Number"){
             alert("All Fields Are Required!!");
        }
        event.preventDefault();
