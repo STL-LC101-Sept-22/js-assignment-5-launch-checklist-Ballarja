@@ -21,8 +21,10 @@ window.addEventListener("load", function() {
             alert("All Fields Are Required!!");
        }
        event.preventDefault();
-        formSubmission(window.document, list, pilotInput, copilotInput, fuelInput, cargoInput);
+       console.log(formSubmission);
+        formSubmission(document, list, pilotInput, copilotInput, fuelInput, cargoInput);
       });
+      
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
@@ -35,7 +37,7 @@ window.addEventListener("load", function() {
         console.log(listedPlanets);
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let currentPlanet = pickPlanet(listedPlanets);
-        addDestinationInfo(window.document, currentPlanet.name, currentPlanet.diameter, currentPlanet.star, currentPlanet.distance, currentPlanet.moons, currentPlanet.image)
+        addDestinationInfo(document, currentPlanet.name, currentPlanet.diameter, currentPlanet.star, currentPlanet.distance, currentPlanet.moons, currentPlanet.image)
     })
     
  });
