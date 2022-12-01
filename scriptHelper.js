@@ -27,8 +27,6 @@ function validateInput(testInput) {
     else if(!isNaN(testInput)){
         return "Is a Number";
     }
-    return " ";
-   
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
@@ -59,7 +57,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         console.log("Ready for launch");
     }
-    if(fuelLevel >= 10000 && cargoLevel <= 10000){
+    else if(fuelLevel >= 10000 && cargoLevel <= 10000){
         document.getElementById("faultyItems").style.visibility = "visible";
         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
@@ -67,6 +65,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         console.log("Ready for launch");
     }
+    
 }
   
             
