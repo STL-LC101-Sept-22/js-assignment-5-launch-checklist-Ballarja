@@ -34,27 +34,27 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // Possibly work needed on if else if statements
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
-    document.getElementById("copilotStatus").innerHTML = `Co-Pilot ${copilot} is ready for launch`;
+    document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`;
     
 
     if(fuelLevel < 10000){
         document.getElementById("faultyItems").style.visibility = "visible";
         document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
         document.getElementById("launchStatus").style.color = "rgb(65, 159, 106)";
-        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+        document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         console.log("fuelLevel log");
     }
     if(cargoLevel > 10000){
         document.getElementById("faultyItems").style.visibility = "visible";
         document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
         document.getElementById("launchStatus").style.color = "rgb(65, 159, 106)";
-        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch";
+        document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
         console.log("cargoLevel log");
     }
-    if(fuelLevel >= 10001 && cargoLevel <= 9999){
+    if(fuelLevel >= 10000 && cargoLevel <= 9999){
         document.getElementById("faultyItems").style.visibility = "visible";
-        document.getElementById("launchStatus").style.color = "green";
-        document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch";
+        document.getElementById("launchStatus").style.color = "rgb(199, 37, 78)";
+        document.getElementById("launchStatus").innerHTML = "Shuttle is Ready for Launch";
         console.log("Ready for launch");
     }
 }
