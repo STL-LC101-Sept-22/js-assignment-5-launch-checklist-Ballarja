@@ -27,7 +27,6 @@ function validateInput(testInput) {
     else if(!isNaN(testInput)){
         return "Is a Number";
     }
-    return "";
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
