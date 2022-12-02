@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
             alert("All Fields Are Required!!");
        }
        event.preventDefault();
-       console.log(formSubmission);
+       //console.log(formSubmission);
         formSubmission(document, list, pilotInput, copilotInput, fuelInput, cargoInput);
       });
       
