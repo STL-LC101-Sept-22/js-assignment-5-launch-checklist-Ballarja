@@ -31,7 +31,7 @@ window.addEventListener("load", function() {
     
     listedPlanetsResponse.then(function (result) {
         listedPlanets = result;
-        
+        console.log(myFetch);
         console.log(listedPlanets);
     }).then(function () {
         console.log(listedPlanets);
